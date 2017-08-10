@@ -12,4 +12,8 @@
 		<property name="userDao" ref="userDao"/>
 	</bean>
 	
+	<bean id="adminUserService" class="com.neusoft.service.impl.AdminUserServiceImpl">
+		<property name="adminUserDao" ref="adminUserDao"/>
+	</bean>
+	
 </beans>

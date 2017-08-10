@@ -11,8 +11,7 @@
 	<!-- 把另一个配置文件包含过来 -->
 	<import resource="beans_dao.xml"/>
 	<import resource="beans_service.xml"/>
-	<import resource="beans_action.xml"/>
-	
+	<import resource="beans_action.xml"/> 
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>

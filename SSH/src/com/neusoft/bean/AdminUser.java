@@ -4,7 +4,7 @@ public class AdminUser {
 	private int id;
 	private String username;
 	private String password;
-	private String loastLoginTime;
+	private String lastLoginTime;
 	public int getId() {
 		return id;
 	}
@@ -23,10 +23,17 @@ public class AdminUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getLoastLoginTime() {
-		return loastLoginTime;
+
+	public String getLastLoginTime() {
+		return lastLoginTime;
 	}
-	public void setLoastLoginTime(String loastLoginTime) {
-		this.loastLoginTime = loastLoginTime;
+	public void setLastLoginTime(String lastLoginTime) {
+		this.lastLoginTime = lastLoginTime;
 	}
+	@Override
+	public String toString() {
+		return "AdminUser [id=" + id + ", username=" + username + ", password="
+				+ password + ", lastLoginTime=" + lastLoginTime + "]";
+	}
+	
 }

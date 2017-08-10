@@ -9,6 +9,6 @@
 		</id>
 		<property name="username" column="username"/>
 		<property name="password" column="password"/>
-		<property name="loastLoginTime" column="loastLoginTime"/>
+		<property name="lastLoginTime" column="lastlogintime"/>
 	</class>
 </hibernate-mapping>

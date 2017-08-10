@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿<%@page language="java" pageEncoding="utf-8" %>
+<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -40,7 +41,7 @@
                         <li><a href="design.html"><i class="icon-font">&#xe006;</i>产品类别</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
+                        <li><a href="adminUserAction.action"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe033;</i>广告管理</a></li> 
