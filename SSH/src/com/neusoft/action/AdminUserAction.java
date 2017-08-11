@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AdminUserAction extends ActionSupport{
 	//需要调用业务逻辑层的接口
 	private AdminUserService adminUserService;
+	private int id;
 	private String username;
 	private String password;
 	//当前的页
@@ -19,6 +20,12 @@ public class AdminUserAction extends ActionSupport{
 	//用来接收查找到的数据
 	private Page page;
 
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public Page getPage() {
 		return page;
 	}
@@ -71,5 +78,11 @@ public class AdminUserAction extends ActionSupport{
 		adminUser.setPassword(password);
 		adminUserService.saveAdminUser(adminUser);
 		return SUCCESS;
+	}
+	
+	//通过id查找管理的信息
+	public String findAdminById(){
+		return password;
+		
 	}
 }

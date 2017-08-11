@@ -8,6 +8,21 @@
     <link rel="stylesheet" type="text/css" href="css/common.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <script type="text/javascript" src="js/libs/modernizr.min.js"></script>
+    <script type="text/javascript">
+    function allChoose(){
+     	  var allcheck=document.getElementById("allck");
+    	  var idcks=document.getElementsByName("ids"); 
+    	  if(allcheck.checked==true){
+    		  for(var i=0;i<idcks.length;i++){
+    			  idcks[i].checked=true;
+    		  }
+    	   }else{ 
+    		   for(var i=0;i<idcks.length;i++){
+     			  idcks[i].checked=false;
+     		  }
+    	   }
+       }
+    </script>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -97,7 +112,7 @@
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                         <tr>
-                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                            <th class="tc" width="5%"><input class="allChoose" id="allck" type="checkbox" onclick="allChoose()"></th>
                             <th>ID</th>
                             <th>用户名</th>
                             <th>密码</th>
@@ -113,7 +128,7 @@
                             <td><s:property value="password"/></td>
                             <td><s:property value="lastLoginTime"/></td>
                             <td>
-                                <a class="link-update" href=" ">修改</a>
+                                <a class="link-update" href="adminUserAction!findAdminById.action?id=<s:property value="id"/>">修改</a>
                                 <a class="link-del" href=" ">删除</a>
                             </td>
                         </tr>
