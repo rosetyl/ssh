@@ -1,4 +1,5 @@
 ﻿<%@page language="java" pageEncoding="utf-8" %>
+<%@taglib prefix="s" uri="/struts-tags" %> 
 <!doctype html>
 <html>
 <head>
@@ -14,21 +15,24 @@
         <div class="topbar-logo-wrap clearfix">
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
-                <li><a class="on" href="#">首页</a></li>
+                <li><a class="on" href="index.html">首页</a></li>
                 <li><a href="#" target="_blank">网站首页</a></li>
             </ul>
         </div>
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a href="#">管理员</a></li>
-                <li><a href="#">修改密码</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a href="http://www.mycodes.net">管理员</a></li>
+                <li><a href="http://www.mycodes.net">修改密码</a></li>
+                <li><a href="http://www.mycodes.net">退出</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="container clearfix">
     <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>菜单</h1>
+        </div>
         <div class="sidebar-content">
             <ul class="sidebar-list">
                 <li>
@@ -57,59 +61,37 @@
     </div>
     <!--/sidebar-->
     <div class="main-wrap">
+
         <div class="crumb-wrap">
-            <div class="crumb-list"></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">管理员管理</a><span class="crumb-step">&gt;</span><span>增加管理员</span></div>
         </div>
         <div class="result-wrap">
-            <div class="result-title">
-                <h1>快捷操作</h1>
-            </div>
             <div class="result-content">
-                <div class="short-wrap">
-                    <a href="#"><i class="icon-font">&#xe001;</i>新增用户</a>
-                    <a href="#"><i class="icon-font">&#xe005;</i>新增产品</a>
-                    <a href="#"><i class="icon-font">&#xe048;</i>新增产品分类</a>
-                    <a href="#"><i class="icon-font">&#xe041;</i>新增管理员</a> 
-                </div>
+                <form action="adminUserAction!register.action" method="post" id="myform" name="myform">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>用户名：</th>
+                                <td>
+                                    <input class="common-text required" id="username" name="username" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>密码：</th>
+                                <td><input class="common-text" name="password" size="50" type="text"></td>
+                            </tr>                            
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
             </div>
         </div>
-        <div class="result-wrap">
-            <div class="result-title">
-                <h1>系统基本信息</h1>
-            </div>
-            <div class="result-content">
-                <ul class="sys-info-list">
-                    <li>
-                        <label class="res-lab">操作系统</label><span class="res-info">WIN7</span>
-                    </li>
-                    <li>
-                        <label class="res-lab">运行环境</label><span class="res-info">Apache</span>
-                    </li>
-                    <li>
-                        <label class="res-lab">运行方式</label><span class="res-info">apache tomcat</span>
-                    </li>
-                    <li>
-                        <label class="res-lab">版本</label><span class="res-info">v1.0</span>
-                    </li> 
-                    <li>
-                        <label class="res-lab">北京时间</label><span class="res-info">2017年7月1日 08:00:00</span>
-                    </li>
-                    <li>
-                        <label class="res-lab">服务器域名/IP</label><span class="res-info">localhost [ 127.0.0.1 ]</span>
-                    </li>
-                    <li>
-                        <label class="res-lab">Host</label><span class="res-info">127.0.0.1</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="result-wrap">
-            <div class="result-title"> 
-            </div>
-            <div class="result-content">
-                 
-            </div>
-        </div>
+
     </div>
     <!--/main-->
 </div>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.neusoft.bean.AdminUser;
 import com.neusoft.dao.AdminUserDao;
+import com.neusoft.page.Page;
 import com.neusoft.service.AdminUserService;
 
 public class AdminUserServiceImpl implements AdminUserService{
@@ -16,7 +17,7 @@ public class AdminUserServiceImpl implements AdminUserService{
 
 	@Override
 	public void saveAdminUser(AdminUser adminUser) {
-	
+		adminUserDao.saveAdminUser(adminUser);
 	}
 
 	@Override
@@ -30,10 +31,10 @@ public class AdminUserServiceImpl implements AdminUserService{
 	}
 
 	@Override
-	public List<AdminUser> findAdminUserList() {
+	public Page findAdminUserList(int currentPage,int pageSize){
 		//调用数据持久层的findAdminUserList方法
-		List<AdminUser> ls = adminUserDao.findAdminUserList();
-		return ls;
+		Page page = adminUserDao.findAdminUserList(currentPage,pageSize);
+		return page;
 	}
 	
 

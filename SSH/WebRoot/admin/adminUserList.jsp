@@ -42,7 +42,7 @@
                         <li><a href="design.html"><i class="icon-font">&#xe006;</i>产品类别</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
+                        <li><a href="adminUserAction.action"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe033;</i>广告管理</a></li> 
@@ -63,7 +63,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">管理员管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
@@ -90,7 +90,7 @@
             <form action="" name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="#"><i class="icon-font"></i>增加用户</a>
+                        <a href="addAdminUser.jsp"><i class="icon-font"></i>增加管理员</a>
                         <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a> 
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                             <th>操作</th>
                         </tr>
                         <!-- 使用struct2的标签显示数据 -->
-                        <s:iterator value="data">
+                        <s:iterator value="page.data">
                         <tr>
                             <td class="tc"><input name="ids" value=" " type="checkbox"></td>
                             <td><s:property value="id"/></td>
@@ -120,7 +120,18 @@
                         </s:iterator> 
                         
                     </table>
-                    <div class="list-page"> 2 条 1/1 页</div>
+                    <div class="list-page">
+                    	 总共页数：<s:property value="page.totalPage"/>
+                    	当前页：<s:property value="page.currentPage"/>
+                    	<s:if test="page.hasPrePage">
+                    		<a href="adminUserAction.action?currentPage=${currentPage-1}">上一页</a>
+                    	</s:if>
+                    	<s:if test="page.hasNextPage">
+                    		<a href="adminUserAction.action?currentPage=${currentPage+1}">下一页</a>
+                    	</s:if>
+                    	
+                    	
+                    </div>
                 </div>
             </form>
         </div>
